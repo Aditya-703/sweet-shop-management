@@ -40,3 +40,8 @@ def test_search_by_category(shop):
     result = shop.search_by_category("Nut-Based")
     assert result[0].name == "Kaju Katli"
 
+# Test searching for sweets within a price range
+def test_search_by_price_range(shop):
+    result = shop.search_by_price_range(20, 50)
+    assert len(result) == 2  # Includes Kaju Katli and Gajar Halwa
+

@@ -45,3 +45,8 @@ class SweetShop:
     def search_by_category(self, category):
         return [s for s in self.sweets if
                 category.lower() == s.category.lower()]
+
+        # Method to find sweets within a specific price range
+    def search_by_price_range(self, min_price, max_price):
+        return [s for s in self.sweets if
+                min_price <= s.price <= max_price]
