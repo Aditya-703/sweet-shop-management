@@ -66,3 +66,9 @@ def restock():
         return render_template("index.html", sweets=shop.view_sweets(), message="Restock successful!", error=None)
     except ValueError as e:
         return render_template("index.html", sweets=shop.view_sweets(), message=None, error=str(e))
+
+
+
+# Entry point to start the Flask app
+if __name__ == "__main__":
+    app.run(debug=True)

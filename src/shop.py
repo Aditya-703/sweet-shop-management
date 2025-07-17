@@ -27,35 +27,34 @@ class SweetShop:
         # Add the sweet to the list
         self.sweets.append(sweet)
 
-        # Method to delete a sweet by its ID
+    # Method to delete a sweet by its ID
     def delete_sweet(self, sweet_id):
         # Filter out the sweet with the given ID
         self.sweets = [s for s in self.sweets if s.id != sweet_id]
 
-        # Method to view all sweets
+    # Method to view all sweets
     def view_sweets(self):
         return self.sweets
 
-        # Method to search sweets by partial name match (case-insensitive)
+    # Method to search sweets by partial name match (case-insensitive)
     def search_by_name(self, name):
          return [s for s in self.sweets if name.lower() in s.name.lower()]
 
-         # Method to search sweets by exact category match (case-insensitive)
-
+    # Method to search sweets by exact category match (case-insensitive)
     def search_by_category(self, category):
         return [s for s in self.sweets if
                 category.lower() == s.category.lower()]
 
-        # Method to find sweets within a specific price range
+    # Method to find sweets within a specific price range
     def search_by_price_range(self, min_price, max_price):
         return [s for s in self.sweets if
                 min_price <= s.price <= max_price]
 
-        # Method to return sweets sorted alphabetically by name
+    # Method to return sweets sorted alphabetically by name
     def sort_by_name(self):
         return sorted(self.sweets, key=lambda s: s.name)
 
-        # Method to return sweets sorted by price (lowest to highest)
+    # Method to return sweets sorted by price (lowest to highest)
     def sort_by_price(self):
         return sorted(self.sweets, key=lambda s: s.price)
 
@@ -69,7 +68,7 @@ class SweetShop:
                     return
             raise ValueError("Sweet not found")
 
-            # Method to restock an existing sweet by ID
+    # Method to restock an existing sweet by ID
 
     def restock_sweet(self, sweet_id, quantity):
         for sweet in self.sweets:
