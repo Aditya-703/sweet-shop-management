@@ -5,7 +5,7 @@ A full-featured Sweet Shop Management System developed in **Python** using **Fla
 ## 📌 Project Overview
 
 This system is designed to simulate a real-world sweet shop management workflow, allowing users to:
-- Add, delete, restock, and purchase sweets
+- Add, delete, restock,and purchase sweets
 - View, sort, and search sweets by name, category, and price range
 - Use a modern, responsive web interface
 - Generate automated test reports using `pytest-html`
