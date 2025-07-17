@@ -50,3 +50,11 @@ class SweetShop:
     def search_by_price_range(self, min_price, max_price):
         return [s for s in self.sweets if
                 min_price <= s.price <= max_price]
+
+        # Method to return sweets sorted alphabetically by name
+    def sort_by_name(self):
+        return sorted(self.sweets, key=lambda s: s.name)
+
+        # Method to return sweets sorted by price (lowest to highest)
+    def sort_by_price(self):
+        return sorted(self.sweets, key=lambda s: s.price)

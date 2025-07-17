@@ -45,3 +45,13 @@ def test_search_by_price_range(shop):
     result = shop.search_by_price_range(20, 50)
     assert len(result) == 2  # Includes Kaju Katli and Gajar Halwa
 
+# Test if sorting by name works (alphabetical order)
+def test_sort_by_name(shop):
+    sorted_sweets = shop.sort_by_name()
+    assert sorted_sweets[0].name == "Gajar Halwa"
+
+# Test if sorting by price returns the lowest-priced sweet first
+def test_sort_by_price(shop):
+    sorted_sweets = shop.sort_by_price()
+    assert sorted_sweets[0].price == 10  # Gulab Jamun
+
