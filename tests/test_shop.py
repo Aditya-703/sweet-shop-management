@@ -55,3 +55,14 @@ def test_sort_by_price(shop):
     sorted_sweets = shop.sort_by_price()
     assert sorted_sweets[0].price == 10  # Gulab Jamun
 
+# Test if purchasing reduces quantity correctly
+def test_purchase_sweet(shop):
+    shop.purchase_sweet(1001, 5)  # Purchase 5 units of Kaju Katli
+    sweet = shop.search_by_name("Kaju Katli")[0]
+    assert sweet.quantity == 15
+
+# Test error is raised if trying to purchase more than available quantity
+def test_purchase_insufficient(shop):
+    with pytest.raises(ValueError):
+        shop.purchase_sweet(1001, 100)
+

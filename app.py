@@ -42,3 +42,15 @@ def delete():
     sweet_id = int(request.form["id"])
     shop.delete_sweet(sweet_id)
     return render_template("index.html", sweets=shop.view_sweets(), message="Sweet deleted successfully!", error=None)
+
+
+# Route to handle purchasing sweets
+@app.route("/purchase", methods=["POST"])
+def purchase():
+    try:
+        id = int(request.form["id"])
+        quantity = int(request.form["quantity"])
+        shop.purchase_sweet(id, quantity)
+        return render_template("index.html", sweets=shop.view_sweets(), message="Purchase successful!", error=None)
+    except ValueError as e:
+        return render_template("index.html", sweets=shop.view_sweets(), message=None, error=str(e))

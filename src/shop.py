@@ -58,3 +58,13 @@ class SweetShop:
         # Method to return sweets sorted by price (lowest to highest)
     def sort_by_price(self):
         return sorted(self.sweets, key=lambda s: s.price)
+
+    # Method to purchase a quantity of a sweet by ID
+    def purchase_sweet(self, sweet_id, quantity):
+            for sweet in self.sweets:
+                if sweet.id == sweet_id:
+                    if sweet.quantity < quantity:
+                        raise ValueError("Not enough stock")
+                    sweet.quantity -= quantity  # Deduct purchased quantity
+                    return
+            raise ValueError("Sweet not found")
