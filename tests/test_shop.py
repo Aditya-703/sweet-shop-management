@@ -1,7 +1,12 @@
-import pytest
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 
 # Import classes from the shop module
 from src.shop import Sweet, SweetShop
+import pytest
+
 
 # Pytest fixture to provide a pre-populated SweetShop instance for all tests
 @pytest.fixture
