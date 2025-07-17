@@ -28,3 +28,8 @@ def test_add_duplicate_sweet(shop):
 def test_delete_sweet(shop):
     shop.delete_sweet(1002)
     assert len(shop.view_sweets()) == 2
+
+# Test searching for a sweet by name (partial match)
+def test_search_by_name(shop):
+    result = shop.search_by_name("Gulab")
+    assert len(result) == 1 and result[0].name == "Gulab Jamun"

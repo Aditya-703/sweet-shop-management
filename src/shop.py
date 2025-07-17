@@ -35,3 +35,7 @@ class SweetShop:
         # Method to view all sweets
     def view_sweets(self):
         return self.sweets
+
+        # Method to search sweets by partial name match (case-insensitive)
+    def search_by_name(self, name):
+         return [s for s in self.sweets if name.lower() in s.name.lower()]
