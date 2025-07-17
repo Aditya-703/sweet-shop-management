@@ -24,3 +24,7 @@ def test_add_duplicate_sweet(shop):
         shop.add_sweet(Sweet(1001, "Duplicate", "Nut-Based", 10, 5))
 
 
+# Test to verify that a sweet can be deleted and count decreases
+def test_delete_sweet(shop):
+    shop.delete_sweet(1002)
+    assert len(shop.view_sweets()) == 2

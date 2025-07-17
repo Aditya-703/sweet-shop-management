@@ -34,3 +34,11 @@ def add():
     except ValueError as e:
         return str(e)
     return render_template("index.html", sweets=shop.view_sweets(), message="Sweet added successfully!", error=None)
+
+
+# Route to handle deleting a sweet from the shop
+@app.route("/delete", methods=["POST"])
+def delete():
+    sweet_id = int(request.form["id"])
+    shop.delete_sweet(sweet_id)
+    return render_template("index.html", sweets=shop.view_sweets(), message="Sweet deleted successfully!", error=None)

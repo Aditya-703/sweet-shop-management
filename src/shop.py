@@ -27,6 +27,11 @@ class SweetShop:
         # Add the sweet to the list
         self.sweets.append(sweet)
 
+        # Method to delete a sweet by its ID
+    def delete_sweet(self, sweet_id):
+        # Filter out the sweet with the given ID
+        self.sweets = [s for s in self.sweets if s.id != sweet_id]
+
         # Method to view all sweets
     def view_sweets(self):
         return self.sweets
