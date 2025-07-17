@@ -54,3 +54,15 @@ def purchase():
         return render_template("index.html", sweets=shop.view_sweets(), message="Purchase successful!", error=None)
     except ValueError as e:
         return render_template("index.html", sweets=shop.view_sweets(), message=None, error=str(e))
+
+
+# Route to handle restocking sweets
+@app.route("/restock", methods=["POST"])
+def restock():
+    try:
+        id = int(request.form["id"])
+        quantity = int(request.form["quantity"])
+        shop.restock_sweet(id, quantity)
+        return render_template("index.html", sweets=shop.view_sweets(), message="Restock successful!", error=None)
+    except ValueError as e:
+        return render_template("index.html", sweets=shop.view_sweets(), message=None, error=str(e))

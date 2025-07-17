@@ -66,3 +66,9 @@ def test_purchase_insufficient(shop):
     with pytest.raises(ValueError):
         shop.purchase_sweet(1001, 100)
 
+
+# Test if restocking increases quantity correctly
+def test_restock_sweet(shop):
+    shop.restock_sweet(1003, 20)  # Add 20 units to Gulab Jamun
+    sweet = shop.search_by_name("Gulab Jamun")[0]
+    assert sweet.quantity == 70

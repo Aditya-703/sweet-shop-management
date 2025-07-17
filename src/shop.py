@@ -68,3 +68,12 @@ class SweetShop:
                     sweet.quantity -= quantity  # Deduct purchased quantity
                     return
             raise ValueError("Sweet not found")
+
+            # Method to restock an existing sweet by ID
+
+    def restock_sweet(self, sweet_id, quantity):
+        for sweet in self.sweets:
+            if sweet.id == sweet_id:
+                sweet.quantity += quantity  # Add restocked quantity
+                return
+        raise ValueError("Sweet not found")
