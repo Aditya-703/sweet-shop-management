@@ -33,3 +33,10 @@ def test_delete_sweet(shop):
 def test_search_by_name(shop):
     result = shop.search_by_name("Gulab")
     assert len(result) == 1 and result[0].name == "Gulab Jamun"
+
+
+# Test searching for sweets by exact category match (case-insensitive)
+def test_search_by_category(shop):
+    result = shop.search_by_category("Nut-Based")
+    assert result[0].name == "Kaju Katli"
+

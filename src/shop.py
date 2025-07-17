@@ -39,3 +39,9 @@ class SweetShop:
         # Method to search sweets by partial name match (case-insensitive)
     def search_by_name(self, name):
          return [s for s in self.sweets if name.lower() in s.name.lower()]
+
+         # Method to search sweets by exact category match (case-insensitive)
+
+    def search_by_category(self, category):
+        return [s for s in self.sweets if
+                category.lower() == s.category.lower()]
